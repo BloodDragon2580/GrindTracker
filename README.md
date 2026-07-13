@@ -1,49 +1,38 @@
-Titan Panel [Farm Friend]
+# GrindTracker 🎒
 
-A World of Warcraft AddOn that extends the famous Titan Panel with the functionality to Track up to nine Farmed Items in the Titan Panel Bar. A notification will appear if the defined goal quantity for an item has reached.
+[![WoW Version](https://img.shields.io/badge/WoW-Retail%20%7C%20Classic-blue.svg)](https://worldofwarcraft.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
- 
+**GrindTracker** is a World of Warcraft addon that tracks farmed items and displays their total count (including bank inventory) in your DataBroker bar (Titan Panel, ElvUI, etc.) or on your Minimap. 
 
- 
-Quickstart
+## 🚀 Features
 
-Alt + Right click on an Item in your Bags or Bank to start tracking.
-You can also enter the name of the desired Item in the AddOn settings.
+- **Intuitive Inventory Hook:** Hold `ALT + Right-Click` on any item in your bags to instantly add it to your tracker or remove it.
+- **Visual Management:** Clean Ace3-powered settings menu to manage tracked items via icon clicks.
+- **Universal Display:** Built on `LibDataBroker-1.1` and `LibDBIcon-1.0`. Plugs into any LDB bar or provides a standalone Minimap button.
+- **Performance Optimized:** Only executes tracking logic on `BAG_UPDATE` events.
+- **Multi-Language Support:** Fully localized in English, German, French, Spanish, Russian, and Simplified Chinese.
 
- 
+## 🛠️ Installation
 
- 
-Features
+1. Download the latest release from the [Releases](../../releases) page or via CurseForge.
+2. Extract the `GrindTracker` folder into your `_retail_\Interface\AddOns\` directory.
+3. Make sure the `Libs` folder is included inside the `GrindTracker` directory.
+4. Restart World of Warcraft or type `/reload` in the chat.
 
-    Track up to four farmed Items in the Titan Panel Bar
-    Track inventory or inventory and bank quantity
-    Show item icon in the Titan Panel Bar
-    Define an optional quantity for the farmed item
-    Shows a notification if the item quantity has reached
-    Select an optional sound for the notification
-    Customize notification effects
-    Show colored item count and quantity
-    Localized (English and German)
-    Define an shortcut for fast tracking (Default: ALT + right click)
-    Toggle item display modes
+## 🎮 Usage
 
- 
+- **Add/Remove Items:** Open your bags, hold **ALT** and **Right-Click** the item you want to track.
+- **Open Settings:** Right-click the GrindTracker display on your DataBroker bar or the Minimap button.
+- **Remove via Menu:** Open the settings and click on the icon of a tracked item to stop tracking it.
 
-Please note: Through the limitation of the API functions it is currently only possible to track known items. That means the items have to be in your data cache (Opened Tooltips, Inventory, Bank etc.)
-The item name will be validated if you set it if the item name is invalid or not known by the API you will see a notification.
+## 📦 Dependencies
+This addon relies on the following embedded libraries:
+- [Ace3](https://www.curseforge.com/wow/addons/ace3) (AceAddon, AceConsole, AceEvent, AceDB, AceGUI, AceConfig, AceLocale)
+- [LibDataBroker-1.1](https://github.com/tekkub/libdatabroker-1-1)
+- [LibDBIcon-1.0](https://www.curseforge.com/wow/addons/libdbicon-1-0)
 
- 
+## ✍️ Author & Copyright
 
- 
-Chat Commands
-
-    /ff track <Item Slot 1 - 9> <Item ID | Item Name | Item Link> - Sets the tracked item
-    /ff quantity <Item Slot 1 - 9> <Quantity> - Sets the goal quantity.
-    /ff primary <Item Slot 1 - 9> - Sets the items position that would be shown in the Titan Panel bar.
-    /ff settings - Open up the AddOn settings page.
-    /ff reset <all | items> - Resets Farm Buddy to it's default settings.
-    /ff version - Show the current used Farm Buddy Version.
-    /ff help - Shows the available chat commands.
-
-
-Download Count https://hanadigital.github.io/grev/?user=BloodDragon2580&repo=Farm-Friend
+Created and maintained by **BloodDragon2580**  
+Website: [Gaming-Nexus](https://gaming-nexus.de)

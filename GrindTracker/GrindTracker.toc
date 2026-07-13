@@ -1,0 +1,20 @@
+## Interface: 120007, 120005
+## Title:|cffd6266cGrindTracker|r
+## Notes: Tracks farmed items and displays them in your DataBroker/Titan Panel.
+## Notes-deDE: Verfolgt gefarmte Items und zeigt diese in deinem DataBroker/Titan Panel an.
+## Author: BloodDragon2580
+## Version: 1.0
+## SavedVariables: GrindTrackerDB
+## OptionalDeps: Ace3, LibDataBroker-1.1
+## IconTexture: Interface\AddOns\GrindTracker\Media\Texture\logo
+
+embeds.xml
+
+Locales\enUS.lua
+Locales\deDE.lua
+Locales\frFR.lua
+Locales\esES.lua
+Locales\ruRU.lua
+Locales\zhCN.lua
+
+GrindTracker.lua
