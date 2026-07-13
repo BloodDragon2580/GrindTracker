@@ -1,0 +1,16 @@
+name: Cleanup Old Releases
+on: workflow_dispatch # Erlaubt das manuelle Starten über die Oberfläche
+
+jobs:
+  delete-releases:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Zwingend nötig, damit die Action löschen darf
+    steps:
+      - name: Delete older releases
+        uses: dev-drprasad/delete-older-releases@v0.3.3
+        with:
+          keep_latest: 1 # Behält das neueste Release. Für mehr einfach die Zahl ändern.
+          delete_tags: true # Löscht auch direkt die dazugehörigen Git-Tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
