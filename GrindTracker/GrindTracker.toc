@@ -3,7 +3,7 @@
 ## Notes: Tracks farmed items and displays them in your DataBroker/Titan Panel.
 ## Notes-deDE: Verfolgt gefarmte Items und zeigt diese in deinem DataBroker/Titan Panel an.
 ## Author: BloodDragon2580
-## Version: 1.0
+## Version: 1.1
 ## SavedVariables: GrindTrackerDB
 ## OptionalDeps: Ace3, LibDataBroker-1.1
 ## IconTexture: Interface\AddOns\GrindTracker\Media\Texture\logo

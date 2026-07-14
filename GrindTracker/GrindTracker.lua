@@ -101,6 +101,14 @@ function GrindTracker:OnInitialize()
 
     self:RegisterEvent("BAG_UPDATE", "UpdateDisplay")
     self:RegisterEvent("PLAYER_ENTERING_WORLD", "UpdateDisplay")
+    self:RegisterEvent("GET_ITEM_INFO_RECEIVED", "OnItemInfoReceived") -- Neues Event hinzugefügt
+    
+    -- Lade alle gespeicherten Items direkt beim Login in den Cache
+    for itemID, _ in pairs(self.db.profile.trackedItems) do
+        if C_Item and C_Item.IsItemDataCachedByID and not C_Item.IsItemDataCachedByID(itemID) then
+            C_Item.RequestLoadItemDataByID(itemID)
+        end
+    end
     
     self:BuildOptionsList()
     
@@ -134,6 +142,14 @@ function GrindTracker:OnInitialize()
         hooksecurefunc(ContainerFrameItemButtonMixin, "OnClick", OnBagItemClicked)
     elseif type(ContainerFrameItemButton_OnModifiedClick) == "function" then
         hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", OnBagItemClicked)
+    end
+end
+
+-- Aktualisiert die Anzeige, sobald der Server die Item-Daten geschickt hat
+function GrindTracker:OnItemInfoReceived(event, itemID, success)
+    if itemID and self.db.profile.trackedItems[itemID] then
+        self:BuildOptionsList()
+        self:UpdateDisplay()
     end
 end
 
